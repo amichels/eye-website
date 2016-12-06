@@ -1,0 +1,39 @@
+@keyframes eye-float {
+    0% {
+      transform: translate(-50%, -46%);
+    }
+    50% {
+      transform: translate(-50%, -54%);
+    }
+    100% {
+      transform: translate(-50%, -46%);
+    }
+}
+
+.eye {
+  transition: 0.2s ease-in;
+  clip-path: ellipse(40% 25% at 50% 50%);
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: eye-float 3s infinite;
+}
+.eye:hover {
+  clip-path: ellipse(40% 2% at 50% 50%);
+}
+
+.eye-ball {
+  border-radius: 100%;
+  width: 3em;
+  height: 3em;
+  background-color: $lightBlue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 2s;
+}
