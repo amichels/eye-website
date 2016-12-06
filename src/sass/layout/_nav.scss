@@ -1,0 +1,22 @@
+.main-nav {
+  @include headline-font;
+  text-align: center;
+  padding: 2em 0;
+  &__con {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    display: inline-block;
+    margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__link {
+    color: $lightBlue;
+    font-size: 2em;
+    text-decoration: none;
+  }
+}
