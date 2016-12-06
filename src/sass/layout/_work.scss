@@ -1,0 +1,11 @@
+.work {
+  background-color: black;
+  opacity: .2;
+  width: 200vw;
+  height: 400vh;
+  transform: rotateX(70deg) translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: bottom;
+}

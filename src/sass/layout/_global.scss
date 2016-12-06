@@ -1,3 +1,7 @@
 body {
   background-color: $darkBlue;
+  perspective: 1000px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
