@@ -15,17 +15,30 @@
 @mixin eye-closed {
   clip-path: ellipse(40% 2% at 50% 50%);
 }
+@mixin float-up {
+  transform: translate(-50%, -46%);
+}
+@mixin float-down {
+  transform: translate(-50%, -54%);
+}
+@mixin eyeball-shake-start {
+  transform: translate(-55%, -165%);
+}
+@mixin eyeball-shake-end {
+  transform: translate(-45%, -155%);
+}
+
 
 // Animations
 @keyframes eye-float {
     0% {
-      transform: translate(-50%, -46%);
+      @include float-up; 
     }
     50% {
-      transform: translate(-50%, -54%);
+      @include float-down; 
     }
     100% {
-      transform: translate(-50%, -46%);
+      @include float-up
     }
 }
 @keyframes eye-shadow {
@@ -50,25 +63,37 @@
     @include eye-open;
   }
 }
+@keyframes eye-ball-shake {
+  0%{
+    @include eyeball-shake-start;
+  }
+  50%{
+    @include eyeball-shake-end;
+  }
+  100%{
+    @include eyeball-shake-start;
+  }
+}
 
 .eye {
-  transition: 0.2s ease-in;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  position: relative;
-  animation: eye-float 3s infinite, eye-blink 10s infinite ease-in;
-  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  @include eye-open;
-  &__con {
-    top: 50%;
-    left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  &__lid {transition: 0.2s ease-in;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    animation: eye-float 3s infinite, eye-blink 10s infinite ease-in;
     position: absolute;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 2s;
+    overflow: hidden;
+    @include eye-open;
   }
   &__ball {
     border-radius: 100%;
@@ -79,7 +104,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 2s;
+    transition: all 2s;
   }
   &__shadow {
     @include shadow-start;
@@ -90,5 +115,15 @@
     left: 50%;
     transform: translateX(-50%);
     animation: eye-shadow 3s infinite;
+  }
+  &--static {
+    .eye__lid {
+      background: url(../images/content/static.gif) center;
+      backgrond-size: 100%;
+    .eye__ball {
+      transform: translate( -50%, -160%);
+      animation: eye-ball-shake .3s infinite;
+    }
+    }
   }
 }
