@@ -1,3 +1,4 @@
+// Mixins
 @mixin shadow-start {
   width: 70%;
   height: 15%;
@@ -8,8 +9,14 @@
   height: 10%;
   opacity: .03;
 }
+@mixin eye-open {
+  clip-path: ellipse(40% 25% at 50% 50%);
+}
+@mixin eye-closed {
+  clip-path: ellipse(40% 2% at 50% 50%);
+}
 
-
+// Animations
 @keyframes eye-float {
     0% {
       transform: translate(-50%, -46%);
@@ -32,21 +39,29 @@
       @include shadow-start;
     }
 }
+@keyframes eye-blink {
+  0%, 47% {
+    @include eye-open;
+  }
+  50%{ 
+    @include eye-closed; 
+  }
+  53%, 100%{
+    @include eye-open;
+  }
+}
 
 .eye {
   transition: 0.2s ease-in;
-  clip-path: ellipse(40% 25% at 50% 50%);
   width: 100%;
   height: 100%;
   background-color: white;
   position: relative;
-  animation: eye-float 3s infinite;
+  animation: eye-float 3s infinite, eye-blink 10s infinite ease-in;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  &:hover {
-    clip-path: ellipse(40% 2% at 50% 50%);
-  }
+  @include eye-open;
   &__con {
     top: 50%;
     left: 50%;
