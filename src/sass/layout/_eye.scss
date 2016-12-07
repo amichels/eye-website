@@ -106,7 +106,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: transform 2s;
+    transition: transform 2s, background-color 2s;
   }
   &__shadow {
     @include shadow-start;
@@ -122,10 +122,28 @@
     .eye__lid {
       background: url(../images/content/static.gif) center;
       backgrond-size: 100%;
+    }
     .eye__ball {
       transform: translate( -50%, -160%);
       animation: eye-ball-shake .3s infinite;
     }
+  }
+  &--first-nav {
+    .eye__ball {
+      transform: translate(-90%,-85%);
+      background-color: $green;
+    }
+  }
+  &--second-nav {
+    .eye__ball {
+      transform: translate(-50%,-90%);
+      background-color: $yellow;
+    }
+  }
+  &--third-nav {
+    .eye__ball {
+      transform: translate(-15%,-90%);
+      background-color: $coral;
     }
   }
 }
