@@ -15,7 +15,7 @@
     }
     &--first-nav:hover {
       .main-nav__link {
-        color: $green;
+        color: $blue;
       }
     }
     &--second-nav:hover {
@@ -25,17 +25,14 @@
     }
     &--third-nav:hover {
       .main-nav__link {
-        color: $coral;
+        color: $pink;
       }
     }
   }
   &__link {
-    color: $lightBlue;
+    color: $darkGray;
     font-size: 2em;
     text-decoration: none;
-    transition: color .5s, text-shadow .5s;
-    &:hover {
-      text-shadow: 0px 0px 12px rgba(150, 150, 150, .7);
-    }
+    transition: color 1s;
   }
 }

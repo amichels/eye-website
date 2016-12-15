@@ -101,7 +101,7 @@
     height: 5vw;
     min-width: 35px;
     min-height: 35px;
-    background-color: $lightBlue;
+    background-color: $green;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -143,7 +143,7 @@
   &--third-nav {
     .eye__ball {
       transform: translate(-15%,-90%);
-      background-color: $coral;
+      background-color: $pink;
     }
   }
 }
