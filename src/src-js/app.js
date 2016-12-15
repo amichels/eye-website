@@ -10,4 +10,4 @@ let _this = window.site
 window.$ = $;
 window.jQuery = jQuery;
 
-_this.nav = new Nav;
+_this.nav = new Nav('#js__main-nav__link__first', '#js__main-nav__link__second', '#js__main-nav__link__third', '#js__eye', 'eye--first-nav', 'eye--second-nav', 'eye--third-nav');
