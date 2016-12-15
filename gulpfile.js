@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     handlebars = require('gulp-hb'),
     fs = require("fs"),
     browserify = require("browserify"),
-    babelify = require("babelify");
+    babelify = require("babelify"),
+    uglifyify = require("uglifyify");
+
 
 // CSS
 gulp.task('css', function() {
@@ -25,6 +27,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return browserify("./src/src-js/app.js")
     .transform("babelify", {presets: ["es2015"]})
+    .transform("uglifyify")
     .bundle()
     .pipe(fs.createWriteStream("./src/js/app.min.js"));
 });
